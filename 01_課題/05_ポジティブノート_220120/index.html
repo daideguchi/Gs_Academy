@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+</html>
+<html>
+
+<head>
+ 
+    <title>スリーグッドシングス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-earthly.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="jquery.cleditor.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.cleditor.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#input").cleditor();
+      });
+
+    </script>
+
+
+    <style>
+        #output li {
+            background-color: rgb(231, 235, 218);
+            list-style-type: none
+
+        }
+
+        #send{
+            width: 150px;
+        }
+
+        #nyuuryoku{
+            margin-top: 30px;
+        }
+
+        #setumei{
+            font-size: 10px;
+        }
+
+        #top{
+            /* width: 100%; */
+            display: flex;
+          justify-content: space-between;
+        }
+
+        #top h1{
+            width: 100%;
+        }
+
+        #top img{
+            width: 30%;
+        }
+    </style>
+
+
+    <body>
+        <div id="top">
+        <h1><u>スリーグッドシングス</u></h1>
+        <img src="./top.png" alt="">
+        </div>
+        <p>ルール：今日の良かった・嬉しかった出来事を３つ簡単に書く</p>
+        <a href="https://kodomo-manabi-labo.net/three-good-things-jikokout
+        eikan#:~:text=%E8%82%AF%E5%AE%9A%E6%84%9F%E3%82%A2%E3%83%8
+        3%E3%83%97%EF%BC%81-,%E3%80%8C%E5%AF%9D%E3%82%8B%E5%89%8D%
+        E3%81%AB%E3%81%9D%E3%81%AE%E6%97%A5%E3%81%AB%E3%81%82%E3%81
+        %A3%E3%81%9F%E3%81%84%E3%81%84%E3%81%93%E3%81%A8%E3%82%92,
+        %E3%81%A0%E3%81%A8%E6%84%9F%E3%81%98%E3%81%9F%E3%81%93%E3%
+        81%A8%E3%80%8D%E3%80%82" id="setumei">スリーグッドシングスとは？</a>
+
+        <br>
+        <br>
+        <div>名前: <input type="text" id="name" /></div>
+
+        <textarea id="input" name="input"></textarea>
+        <script>
+            textarea = document.getElementById("input");
+            textarea.value = `①<br><br>②<br><br>③`
+        </script>
+
+        <div>
+            <button type="button" id="send">決定</button>
+        </div>
+
+
+    <section id="nyuuryoku"><p><u>入力内容</u></p></section>
+        <ul id="output"></ul>
+
+
+        <script>
+            // 日時をいい感じの形式にする関数、padStartは頭文字に０を入れる関数
+            function convertTimestampToDatetime(timestamp) {
+                const _d = timestamp ? new Date(timestamp * 1000) : new Date();
+                const Y = _d.getFullYear();
+                const m = (_d.getMonth() + 1).toString().padStart(2, '0');
+                const d = _d.getDate().toString().padStart(2, '0');
+                const H = _d.getHours().toString().padStart(2, '0');
+                const i = _d.getMinutes().toString().padStart(2, '0');
+                const s = _d.getSeconds().toString().padStart(2, '0');
+                return `${Y}/${m}/${d} ${H}:${i}:${s}`;
+            }
+        </script>
+        </script>
+        <!-- 以下にfirebaseのコードを貼り付けよう -->
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+             import { initializeApp }  from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"; 
+            // TODO: Add SDKs for Firebase products that you want to use 
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration 
+            const firebaseConfig = { 
+                apiKey: "AIzaSyDjSrLVMKohxnwStu0UW6fkmxxRNcS", 
+                authDomain: "gs-realtime-chat.firebaseapp.com",
+                 projectId: "gs-realtime-chat", 
+                 storageBucket: "gs-realtime-chat.appspot.com",
+            messagingSenderId: "43046841878", 
+            appId: "1:43046841878:web:97a4c60ccb83256cfc0f37" 
+        }; 
+        // Initialize Firebase
+         const app = initializeApp(firebaseConfig) //Firebaseのデータベースとの掛橋
+         const db = getFirestore(app);
+         
+         import {
+              getFirestore,
+               collection,
+            addDoc,
+             serverTimestamp, 
+             onSnapshot, 
+             orderBy,
+            //データの順番
+             query,//フィルターをかける
+         } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+          $("#send").on("click", function () { 
+              // alert("check") //オブジェクトでデータを渡す
+           const data = {
+                name: $("#name").val(),
+            text: $("#input").val(),
+            // text2: $("#text2").val(), 
+            // text3: $("#text3").val(), 
+            time: serverTimestamp(), 
+        }; addDoc(collection(db, "chat"), data);//自分のプロジェクトのchatコレクションにdataを追加している
+        $("#name").val("");
+        textarea = document.getElementById("input");
+        textarea.value = `①<br><br>②<br><br>③`
+        //  $("#input").val("");
+         //送信後に入力値を空文字で上書き 
+        //  $("#text2").val("");
+        //   $("#text3").val("");
+
+            });
+            
+            //onsnapshotがデータベースの変更を検知→データベースの中身を返してくれる
+             const q = query(collection(db, "chat"), orderBy("time", "desc")) 
+             onSnapshot(q, (querySnapshot) => { 
+                 //自分のfirestore databaseのchatコレクションをonsnapshotが監視してくれる 
+                console.log(querySnapshot.docs[0].id);//docsが配列。要素のidをドットで繋いで取得。documentのidは削除や更新で使う
+            console.log(querySnapshot.docs[0].data());//datal関数でname/text/timeを取得
+             
+            const dataArray = []; //docsは配列でいくつもデータがある。それを分解したものをdocとする。
+             // forEachを走らせて、一つずつの要素（doc）をそれぞれ処理していく。 // 固まったデータを壊して分解するイメージ
+              querySnapshot.docs.forEach(function (doc) {//forEachを回す
+            const data =  {
+                 id: doc.id, 
+                 data: doc.data(),
+                 }; 
+                 
+                 dataArray.push(data); 
+                
+                }); 
+                 // console.log(dataArray) 
+                 //分解されたデータを配列に入れていく
+
+            const tagArray = []; 
+                dataArray.forEach(function (data) { 
+                 tagArray.push(`
+                <li id="${data.id}">
+                    <p>名前（${data.data.name }）：${convertTimestampToDatetime(data.data.time.seconds)}</p>
+                    <p>${data.data.text}</p>
+
+                </li>
+                `); 
+            }); 
+        
+        $("#output").html(tagArray); //convertTimestampToDatetimeにsecondsの情報を渡す→secondsは1/1から何秒経ったかの数値データ 
+        // console.log(tagArray) 
+
+
+    })
+
+        $("#text").on("keydown", function (e) { //keyコードはキーボードのボタンごとに規定されている。eをコンソールして確認できる
+             if (e.keyCode === 13) { const data = {
+            name:
+             $("#name").val(), text:
+              $("#input").val(), text: 
+            //   $("#text2").val(), text: 
+            //   $("#text").val(), time: 
+              serverTimestamp(), }; addDoc(collection(db, "chat"), data);
+               $("#name").val(""); 
+               $("#input").val(""); 
+            //    $("#text3").val(""); 
+            } 
+        }); 
+
+    // location.reload();
+
+
+
+        </script>
+        <footer>
+            &copy;3 good things
+        </footer>
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- AIzaSyDjSrLVMKohxnwStu0UW6fkmxxRNcS -->

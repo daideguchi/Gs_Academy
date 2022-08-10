@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^2.0.6",
+    "firebase": "^9.6.3",
+    "vue2-filters": "^0.14.0",
+    "vuefire": "^3.0.0-alpha.2"
+  }
+}

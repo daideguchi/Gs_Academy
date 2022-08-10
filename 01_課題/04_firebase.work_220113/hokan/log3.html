@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MyMoney SampleCode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <!--sakuraの読み込みと、画面レイアウトのスタイルシートの読み込み-->
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-earthly.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <!--IndexedDB関連のJavaScriptの読み込み-->
+    <script src="indexedDB.js">s</script>
+
+    <!-- Chart.jsとグラフ表示のJavaScriptの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="graph.js"></script>
+
+    <!--フォーム入力チェックのJavaScript読み込み-->
+    <script src="inputCheck.js"></script>
+
+
+
+<body>
+    <header>
+        <h1 id="home">Asset Manager</h1>
+        <h1 id="total"></h1>
+        <div class="navi">
+            <button onclick="window.location.hash ='#home'">ホーム</button>
+            <button onclick="window.location.hash ='#input'">入力</button>
+            <button onclick="window.location.hash ='#inOutList'">入出金一覧</button>
+            <button onclick="window.location.hash ='#graph'">グラフ</button>
+        </div>
+    </header>
+
+    <article>
+        <!-- 入力
+        <h2 id="input">入力</h2>
+        <section id="inputSection">
+            <div>
+                <label>収支</label>
+                <input name="balance" type="radio" value="買い" onclick="disableSelectBox(false);" checked>買い
+                <input name="balance" type="radio" value="売り" onclick="disableSelectBox(true);">売り
+
+                <label>日付</label>
+                <input type="date" id="date">
+                <label>銘柄</label>
+                <input type="text" id="meigara" placeholder="名称、ティッカーコードなど">
+                <select id="category">
+                    <option>-種別を選択-</option>
+                    <option>日本株</option>
+                    <option>米国株</option>
+                    <option>仮想通貨</option>
+                    <option>為替</option>
+                    <option>投資信託</option>
+                    <option>現物</option>
+                    <option>不動産</option>
+                    <option>その他</option>
+
+                </select>
+            </div>
+            <div>
+                <label>金額</label>
+                <input type="number" id="amount" placeholder="金額を記入">円
+                <label>メモ</label>
+                <input type="text" id="memo" placeholder="買ったものを記入">
+            </div>
+        </section>
+        <div class="submit"> -->
+        <!-- <button>登録する</button> -->
+        <button onclick="regist();">登録する</button>
+
+        </div>
+
+        <!-- 入出金一覧 -->
+        <h2 id="inOutList">入出金一覧</h2>
+        <section id="list">
+            <!-- ここに入出金一覧を表示します。 -->
+            <script>
+                createList();
+            </script>
+        </section>
+
+        <!-- グラフ -->
+        <h2 id="graph">グラフ</h2>
+        <!-- <hr> -->
+        <section>
+            <!-- ここにグラフを表示します。 -->
+            <canvas id="pieChart"></canvas>
+
+        </section>
+
+    </article>
+    <footer>
+        &copy;Asset Manager
+    </footer>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <h1>Asset Manager</h1>
+    <!-- 入力場所を作成しよう -->
+    <form>
+        <fieldset>
+            <!-- <legend>内容入力</legend>
+            <input name="balance" type="radio" value="買い" onclick="disableSelectBox(false);" checked>買い
+            <input name="balance" type="radio" value="売り" onclick="disableSelectBox(true);">売り -->
+            <!-- <div>
+                name: <input type="text" id="name">
+            </div>
+            <div>
+                text: <input type="text" id="text">
+            </div>
+            <div>
+                date: <input type="date" id="date">
+            </div>
+            <div>
+                <button type="button" id="send">決定</button>
+            </div> -->
+            <h2 id="input">入力</h2>
+            <section id="inputSection">
+                <div>
+                    <label>収支</label>
+                    <input name="balance" type="radio" value="買い" onclick="disableSelectBox(false);" checked>買い
+                    <input name="balance" type="radio" value="売り" onclick="disableSelectBox(true);">売り
+
+                    <label>日付</label>
+                    <input type="date" id="date">
+                    <label>銘柄</label>
+                    <input type="text" id="meigara" placeholder="名称、ティッカーコードなど">
+                    <select id="category">
+                        <option>-種別を選択-</option>
+                        <option>日本株</option>
+                        <option>米国株</option>
+                        <option>仮想通貨</option>
+                        <option>為替</option>
+                        <option>投資信託</option>
+                        <option>現物</option>
+                        <option>不動産</option>
+                        <option>その他</option>
+
+                    </select>
+                </div>
+                <div>
+                    <label>金額</label>
+                    <input type="number" id="amount" placeholder="金額を記入">円
+                    <label>メモ</label>
+                    <input type="text" id="memo" placeholder="買ったものを記入">
+                    <div>
+                        <button type="button" id="send">登録</button>
+                    </div>
+                </div>
+            </section>
+        </fieldset>
+    </form>
+
+    <table>
+        <tr>
+            <th>日付</th>
+            <th>収支</th>
+            <th>カテゴリ</th>
+            <th>金額</th>
+            <th>メモ</th>
+            <th>削除
+            </th>
+        </tr>
+    </table>
+    <!-- データ出力場所 -->
+    <ul id="output"></ul>
+
+    <!-- <script>
+            const dbName = "kakeiboDB";
+            const storeName = "kakeiboStore";
+            const dbVersion = 1;
+        </script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // 日時をいい感じの形式にする関数、padStartは頭文字に０を入れる関数
+        function convertTimestampToDatetime(timestamp) {
+            const _d = timestamp ? new Date(timestamp * 1000) : new Date();
+            const Y = _d.getFullYear();
+            const m = (_d.getMonth() + 1).toString().padStart(2, '0');
+            const d = _d.getDate().toString().padStart(2, '0');
+            const H = _d.getHours().toString().padStart(2, '0');
+            const i = _d.getMinutes().toString().padStart(2, '0');
+            const s = _d.getSeconds().toString().padStart(2, '0');
+            return `${Y}/${m}/${d} ${H}:${i}:${s}`;
+        }
+    </script>
+    </script>
+    <!-- 以下にfirebaseのコードを貼り付けよう -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDjSrLVMKohxnwStu0UW6fkmxxRNcS-TYA",
+            authDomain: "gs-realtime-chat.firebaseapp.com",
+            projectId: "gs-realtime-chat",
+            storageBucket: "gs-realtime-chat.appspot.com",
+            messagingSenderId: "43046841878",
+            appId: "1:43046841878:web:97a4c60ccb83256cfc0f37"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        //Firebaseのデータベースとの掛橋
+        const db = getFirestore(app);
+
+
+
+        import {
+            getFirestore,
+            collection,
+            addDoc,
+            serverTimestamp,
+            onSnapshot,
+            orderBy,//データの順番
+            query,//フィルターをかける
+        } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+
+
+        $("#send").on("click", function () {
+            // alert("check")
+            //オブジェクトでデータを渡す
+            let radio = document.getElementsByName("balance");
+            let balance;
+            for (let i = 0; i < radio.length; i++) {
+                if (radio[i].checked == true) {
+                    balance = radio[i].value;
+                    break;
+                }
+            }
+            let date = document.getElementById("date").value;
+            let amount = document.getElementById("amount").value;
+            let memo = document.getElementById("memo").value;
+            let category = document.getElementById("category").value;
+
+            const data = {
+                date: date,
+                balance: balance,
+                category: category,
+                amount: amount,
+                memo: memo,
+            };
+            addDoc(collection(db, "chat"), data);//自分のプロジェクトのchatコレクションにdataを追加している
+            // $("#text").val("");//送信後に入力値を空文字で上書き
+
+        });
+
+        //onsnapshotがデータベースの変更を検知→データベースの中身を返してくれる
+
+        const q = query(collection(db, "chat"), orderBy("date", "desc"))
+        onSnapshot(q, (querySnapshot) => {
+            //自分のfirestore databaseのchatコレクションをonsnapshotが監視してくれる
+            // console.log(querySnapshot.docs[0].id);//docsが配列。要素のidをドットで繋いで取得。documentのidは削除や更新で使う
+            // console.log(querySnapshot.docs[0].data());//datal関数でname/text/timeを取得
+
+            const dataArray = [];
+            //docsは配列でいくつもデータがある。それを分解したものをdocとする。
+            // forEachを走らせて、一つずつの要素（doc）をそれぞれ処理していく。
+            // 固まったデータを壊して分解するイメージ
+            querySnapshot.docs.forEach(function (doc) {//forEachを回す
+                const data = {
+                    id: doc.id,
+                    data: doc.data()
+                };
+                dataArray.push(data);
+
+            });
+
+            let table = `
+                <table>
+                    <tr>
+                        <th>日付</th>
+                        <th>収支</th>
+                        <th>カテゴリ</th>
+                        <th>金額</th>
+                        <th>メモ</th>
+                        <th>削除
+                    </th>
+                </tr>
+            `;
+            // console.log(dataArray)
+            // let table1 = `
+            //     <table>
+            //         <tr>
+            //             <th>日付</th>
+            //             <th>収支</th>
+            //             <th>カテゴリ</th>
+            //             <th>金額</th>
+            //             <th>メモ</th>
+            //             <th>削除</th>
+            //        </tr>
+            // `;
+            // let table2 = `
+
+            // `;
+            //分解されたデータを配列に入れていく
+            const tagArray = [];
+            // tagArray.push(table1)
+
+            tagArray.forEach((data) => {
+                console.log(data);
+                table += `
+                     <tr>
+                         <td>${data.deta.date}</td>
+                         <td>${deta.deta.balance}</td>
+                         <td>${deta.deta.category}</td>
+                         <td>${deta.deta.amount}</td>
+                         <td>${deta.deta.memo}</td>
+                        <td><button onclick="deleteData('${element.id}')">×</button></td>
+                     </tr>
+                 `;
+            });
+
+            // dataArray.forEach(function (data) {
+
+            //     tagArray.push(table2 +=
+            //         `
+            //      <tr>
+            //              <td>${data.data.date}</td>
+            //              <td>${data.data.balance}</td>
+            //              <td>${data.data.category}</td>
+            //              <td>${data.data.amount}</td>
+            //              <td>${data.data.memo}</td>
+            //          </tr>`)
+            //     let table = table1 + table2
+            //     table += `</table>`;
+            //     //convertTimestampToDatetimeにsecondsの情報を渡す→secondsは1/1から何秒経ったかの数値データ
+
+            // })
+
+            $("#output").html(table);
+
+
+            // $("#text").on("keydown", function (e) {
+            //     //keyコードはキーボードのボタンごとに規定されている。eをコンソールして確認できる
+            //     if (e.keyCode === 13) {
+            //         const data = {
+            //             name: $("#name").val(),
+            //             text: $("#text").val(),
+            //             time: serverTimestamp(),
+            //         };
+            //         addDoc(collection(db, "chat"), data);
+            //         $("#text").val("");
+            //     }
+            // });
+        })
+
+    </script>

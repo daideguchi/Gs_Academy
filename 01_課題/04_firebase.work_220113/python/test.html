@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./brython.js"></script>
+    <script type="text/javascript" src="./brython_stdlib.js"></script>
+</head>
+
+<body onload="brython()">
+    <script type="text/python">
+from browser import document
+
+document <= "Hello" 
+
+from pandas_datareader import data
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+get_ipython().run_line_magic('matplotlib', 'inline')
+pd.core.common.is_list_like = pd.api.types.is_list_like
+
+def company_stock(start,end,company_code):
+    df = data.DataReader(company_code, "stooq")
+    df[(df.index>=start) & (df.index<=end)]
+
+    date=df.index
+    price=df["Close"]
+
+    span01=5
+    span02=25
+    span03=50
+
+    df["sma01"]=price.rolling(window=span01).mean()
+    df["sma02"]=price.rolling(window=span02).mean()
+    df["sma03"]=price.rolling(window=span03).mean()
+
+    plt.figure(figsize=(20,10))
+    plt.subplot(2,1,1)
+
+    plt.plot(date,price,label="close",color="#99b898")
+    plt.plot(date,df["sma01"],label="sma01",color="#e84a5f")
+    plt.plot(date,df["sma02"],label="sma02",color="#ff847c")
+    plt.plot(date,df["sma03"],label="sma03",color="#feceab")
+    plt.legend()
+
+    plt.subplot(2,1,2)
+    plt.bar(date,df["Volume"],label="volume",color="grey")
+    plt.legend()
+
+    company_stock("2019-06-01","2020-06-01","6502.JP")
+
+
+</script>
+</body>
+
+</html>
+
+
+
+<!-- 
+
+
+
+
+<html>
+
+<head>
+    <title>BrythonでBMIを計算する</title>
+    <meta charset="utf-8">
+    <script src="./brython.js"></script>
+    <script src="./brython_stdlib.js"></script>
+</head>
+
+<body onload="brython()">
+    <script type="text/python">
+    from browser import document
+
+    document <= "Hell"
+    
+    def calc_bmi(e):
+    weight = float(document["weight"].value)
+    height = float(document["height"].value)
+    
+    bmi = str(weight/(height*height))
+    rslt = document["result"]
+    rslt.text = bmi
+    
+    
+    execute_btn = document["execute"]
+    execute_btn.bind("click", calc_bmi)
+
+</script>
+
+    <script type="text/python" src="static/bmi.py"></script>
+<h1>BrythonでBMIを計算する</h1>
+
+    <p>身長(メートル)
+        <input type="text" id="height" />
+    <p>体重(キログラム)
+        <input type="text" id="weight" />
+        <br><button id="execute">計算だ!</button>
+
+    <div id="result"></div>
+
+
+</body>
+
+</html>  -->
