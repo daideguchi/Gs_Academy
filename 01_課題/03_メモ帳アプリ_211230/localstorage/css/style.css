@@ -1,0 +1,63 @@
+/* .status{
+    display: flex;
+    justify-content: center;
+} */
+.zentai{
+    background: rgb(216, 241, 223);
+}
+
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+th, td {
+  padding: 5px;
+  border: 1px solid #333;
+}
+th {
+  background-color: #2c88d9;
+  color: #FFF;
+}
+
+.s_button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 24pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 24px 24px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+.s_button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.main{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+#text_q{
+font-size: 25px;
+}
+
+#text_s{
+font-size: 21px;
+}
+
+#text_a{
+font-size: 21px;
+}
+
+.setumei{
+    line-height:0.4
+}

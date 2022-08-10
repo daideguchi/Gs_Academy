@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+</head>
+
+<body>
+    
+    <div class="rulesotowaku">
+        <div class="rule">
+            <h2>ルールの説明</h2>
+            <h2>
+                このゲームは韓国ドラマ「イカゲーム」で登場したゲームを再現したものです。
+            </h2>
+        </div>
+        <div>
+            <br>
+            <p>最初、自分と相手、それぞれ１０個のおはじきを持っています。</p>
+
+            <div class="rulesetumei">
+                <p> ①おはじきを何個賭けるか決めます。</p>
+                <p> ②相手の手は、「偶数」か「奇数」を予想します。</p>
+                <p> ③予想が当たれば、賭けた数のおはじきを相手から貰えるが、外れれば相手に賭けたおはじきを渡します。</p>
+                <p> ④交互に予想しあい、先に全部のおはじきを奪った方の勝ち</p>
+            </div>
+
+
+
+        </div>
+
+        <br>
+        <div>
+            <h2 class="blink">Enterキークリックで先行後攻ルーレット！！</h2>
+        </div>
+    </div>
+    <br>
+    <div>
+        <img src="img/setsumei.png" alt="" srcset="">
+    </div>
+    <a id="exe_botan"></a>
+
+    <script>
+        let btn = document.getElementById('exe_botan');
+        // Enterキー押下時、送信処理が実行する
+        window.document.onkeydown = function (event) {
+            if (event.key === 'Enter') {
+                window.location.href = 'game.html'; // 遷移
+
+            }
+        }
+    </script>
+</body>
+
+</html>

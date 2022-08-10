@@ -1,0 +1,24 @@
+{
+  "name": "welbe-link",
+  "version": "1.0.0",
+  "description": "- 4/3現在のwebベータ版実装機能\r - SNSの基本的な機能（トップページ、マイページ、ユーザーページ、地図検索機能、記事投稿機能、コメント機能、コメントの件数表示など。）\r - 暫定のデプロイURL ※デザインは後回し\r http://dark-saga-2817.vivian.jp/index.php\r - デプロイするとなぜか新規登録ができない。※デモ版はメールdemo2@demo パスワードdemoでログインできる",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.php"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daideguchi/99sotusei.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daideguchi/99sotusei/issues"
+  },
+  "homepage": "https://github.com/daideguchi/99sotusei#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

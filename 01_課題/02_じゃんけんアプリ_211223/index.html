@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+
+    <!-- <audio autoplay>
+        <source src="top.mp3">
+        <source src="top.wav">
+
+    </audio> -->
+
+    <form method="POST" name="form1">
+
+        <img id="pic" src="img/top2.jpg" width="100%" height="100%">
+
+    </form>
+
+    <script>
+
+        'use strict';
+
+        const img = ["img/top2.jpg", "img/top1.jpg"];
+
+        let count = 1;
+
+        picChange();
+
+        function picChange() {
+
+            count++;
+            // カウントが最大になれば初期値に戻す
+            if (count == img.length) count = 0;
+            //画像選択
+            pic.src = img[count];
+            //1秒ごとに実行
+            setTimeout("picChange()", 500);
+        }
+
+    </script>
+
+
+
+    <a id="exe_botan"></a>
+
+    <script>
+        let btn = document.getElementById('exe_botan');
+        // Enterキー押下時、送信処理が実行する
+        window.document.onkeydown = function (event) {
+            if (event.key === 'Enter') {
+                window.location.href = 'setsumei.html'; // 通常の遷移
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

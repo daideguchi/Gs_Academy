@@ -1,0 +1,319 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <script src="app.js" defer></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+</head>
+
+<body class="all_page">
+  <main>
+        <audio autoplay>
+          <source src="top.mp3">
+          <source src="top.wav">
+        
+        </audio>
+
+    <!-- <div class="outline">
+        <div class="roulette" id="roulette">1</div>
+        <br />
+        <input type="button" value="スタート" id="start" onclick="start();" />
+        <input type="button" value="ストップ" id="stop" onclick="stop();" />
+      </div> -->
+    <div id="roulette1" class="center">
+
+
+      <h1 data-text=""><span></span>先行・後攻ルーレット</h1>
+      <br>
+
+      <div class="outline" id="roulette">
+        <div class="roulette" id="isPlace">スタートを押してください</div>
+        <br />
+        <!-- <a href="" class="btn btn--orange btn--radius">PUSH</a> -->
+
+        <input class="f_roulette" type="button" value="スタート" id="start" onclick="clickedStart()" />
+        <!-- <input class="f_roulette" type="button" value="スタート" id="start" /> -->
+
+        <input class="f_roulette" type="button" value="ストップ" id="stop" />
+        <p id="roulette_kekka"></p>
+      </div>
+      <div id="roulette_kekka_button">
+        <!-- <a href="" class="btn btn--orange btn--cubic btn--shadow">PUSH！</a> -->
+        <input class="ok_button" type="button" value="OK" id="start_bottun" />
+      </div>
+    </div>
+
+
+    <!-- タイマーセットしてスタートエフェクト流す -->
+    <div id="page_zentai" class="pazezentai">
+      <div id="timer">
+        <p>制限時間 残り<output class="timer_m"></output>秒
+        </p>
+      </div>
+      <section>
+        <div>
+          <!-- 文字フェードアウト後、タイマー稼働 -->
+          <div id="gamestart_mozi">
+            <h1>ゲームスタート</h1>
+          </div>
+        </div>
+      </section>
+      <div class="meter">
+        <!-- 自分の画像 -->
+        <div class="gazou">
+          <img src="img/自分.png" alt="自分の画像">
+        </div>
+        <div class="zibun">
+          <div>
+            <section class="player">
+              <h2 class="zibun_name" id="playerName"></h2>
+            </section>
+          </div>
+          <div class="hp">
+            <div id="currentPlayerHp"></div>
+            <div id="maxPlayerHp"></div>
+            <div class="zibun_gazouohaziki">
+              <p id="z_lifepoint1">●</p>
+              <p id="z_lifepoint2">●</p>
+              <p id="z_lifepoint3">●</p>
+              <p id="z_lifepoint4">●</p>
+              <p id="z_lifepoint5">●</p>
+              <p id="z_lifepoint6">●</p>
+              <p id="z_lifepoint7">●</p>
+              <p id="z_lifepoint8">●</p>
+              <p id="z_lifepoint9">●</p>
+              <p id="z_lifepoint10">●</p>
+              <p id="z_lifepoint11">●</p>
+              <p id="z_lifepoint12">●</p>
+              <p id="z_lifepoint13">●</p>
+              <p id="z_lifepoint14">●</p>
+              <p id="z_lifepoint15">●</p>
+              <p id="z_lifepoint16">●</p>
+              <p id="z_lifepoint17">●</p>
+              <p id="z_lifepoint18">●</p>
+              <p id="z_lifepoint19">●</p>
+              <p id="z_lifepoint20">●</p>
+              <!-- <img src="img/おはじき画像.png" alt="おはじきの画像"> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="aite">
+          <div>
+            <section class="enemy">
+              <h2 class="teki_name" id="enemyName"></h2>
+          </div>
+          <div class="hp">
+            <div id="currentEnemyHp"></div>
+            <div id="maxEnemyHp"></div>
+            <div class="aite_gazouohaziki">
+              <p id="a_lifepoint1">●</p>
+              <p id="a_lifepoint2">●</p>
+              <p id="a_lifepoint3">●</p>
+              <p id="a_lifepoint4">●</p>
+              <p id="a_lifepoint5">●</p>
+              <p id="a_lifepoint6">●</p>
+              <p id="a_lifepoint7">●</p>
+              <p id="a_lifepoint8">●</p>
+              <p id="a_lifepoint9">●</p>
+              <p id="a_lifepoint10">●</p>
+              <p id="a_lifepoint11">●</p>
+              <p id="a_lifepoint12">●</p>
+              <p id="a_lifepoint13">●</p>
+              <p id="a_lifepoint14">●</p>
+              <p id="a_lifepoint15">●</p>
+              <p id="a_lifepoint16">●</p>
+              <p id="a_lifepoint17">●</p>
+              <p id="a_lifepoint18">●</p>
+              <p id="a_lifepoint19">●</p>
+              <p id="a_lifepoint20">●</p>
+
+              <!-- <img src="img/おはじき画像.png" alt="おはじきの画像"> -->
+            </div>
+          </div>
+        </div>
+        </section>
+        <!-- 相手の画像 -->
+        <div class="gazou">
+          <img src="img/相手.png" alt="相手の画像">
+        </div>
+      </div>
+      <br>
+      <p id="kaisuu"></p>
+
+      <div class="topsetumei" id="sen_setumei">
+        <div class="box27">
+          <span class="box-title">自分のターン</span>
+          <p>まず好きな数のおはじきの数を選びます（ベット）</p>
+          <p>ベットが終わったら、<b>相手の手の中は偶数か奇数か予想</b>してください！</p>
+          <p>●予想が当たる（勝ち） → 自分がベットした数のおはじきを奪う</p>
+          <p>○予想が外れる（負け） → 自分がベットした数のおはじきを失う</p>
+        </div>
+      </div>
+
+      <div class="topsetumei" id="kou_setumei">
+        <div class="box28">
+          <span class="box-title">相手のターン</span>
+          <p>まず好きな数のおはじきの数を選びます</p>
+          <p>その数を、<b>相手が偶数か奇数を予想します。外れることを祈りましょう！</b></p>
+          <p>●相手の予想が当たる（負け） → 相手がベットした数のおはじきを失う</p>
+          <p>○相手の予想が外れる（勝ち） → 相手がベットした数のおはじきを奪う</p>
+        </div>
+      </div>
+
+      <div id="ikutu_bet_suru" class="bet_b">
+        <div id="senkou_bet">
+          <p>いくつベットしますか？</p>
+        </div>
+        <div id="koukou_bet">
+          <p>好きな数を選んでください。相手が「偶数」「奇数」を予想します。</p>
+        </div>
+        <div class="b_hairetu_p">
+          <div class="b_hairetu_c">
+            <!-- ボタンたち onclickでjavascript内の関数一つで選択結果を表示できないかな -->
+            <input type="button" value="1個" name="1" id="button1" onClick="getId(this.name);">
+            <input type="button" value="2個" name="2" id="button2" onClick="getId(this.name);">
+            <input type="button" value="3個" name="3" id="button3" onClick="getId(this.name);">
+            <input type="button" value="4個" name="4" id="button4" onClick="getId(this.name);">
+            <input type="button" value="5個" name="5" id="button5" onClick="getId(this.name);">
+            <input type="button" value="6個" name="6" id="button6" onClick="getId(this.name);">
+            <input type="button" value="7個" name="7" id="button7" onClick="getId(this.name);">
+            <input type="button" value="8個" name="8" id="button8" onClick="getId(this.name);">
+            <input type="button" value="9個" name="9" id="button9" onClick="getId(this.name);">
+            <input type="button" value="10個" name="10" id="button10" onClick="getId(this.name);">
+            <input type="button" value="11個" name="11" id="button11" onClick="getId(this.name);">
+            <input type="button" value="12個" name="12" id="button12" onClick="getId(this.name);">
+            <input type="button" value="13個" name="13" id="button13" onClick="getId(this.name);">
+            <input type="button" value="14個" name="14" id="button14" onClick="getId(this.name);">
+            <input type="button" value="15個" name="15" id="button15" onClick="getId(this.name);">
+            <input type="button" value="16個" name="16" id="button16" onClick="getId(this.name);">
+            <input type="button" value="17個" name="17" id="button17" onClick="getId(this.name);">
+            <input type="button" value="18個" name="18" id="button18" onClick="getId(this.name);">
+            <input type="button" value="19個" name="19" id="button19" onClick="getId(this.name);">
+          </div>
+        </div>
+      </div>
+
+
+      <div id="result"></div>
+
+
+
+      <div class="center">
+
+        <div id="hanntei1"></div>
+        <div id="hanntei2"></div>
+        <div id="hanntei3"></div>
+
+
+        <div id="kekka"></div>
+        <div id="kekka_2"></div>
+
+        <div id="zibunnobetsuu">
+          <form class="bicyousei">
+            <label for="textForm">自分のおはじき数:</label>
+            <input class="ohazikinumber" type="number" id="resultForm" readonly="readonly">
+          </form>
+        </div>
+      </div>
+      <section>
+        <div id="senkou_disp" class="cyuuouyose">
+          <div>
+            <p id="senkou">相手のおはじきは「偶数」「奇数」どっち？</p>
+          </div>
+          <!-- グーの絵を挿入する -->
+          <div class="gusuukisuubotan">
+            <button id="button_guu" class="kaisi">相手は偶数だ！</button>
+            <button id="button_ki" class="kaisi">相手は奇数だ！</button>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <div id="koukou_disp" class="koukou_botan">
+          <div>
+            <p>おはじき数（偶数・奇数）が決まったら「スタート」を押す！</p>
+          </div>
+          <div>
+            <button id="koukou_b" class="kaisi">スタート(相手が予想を間違えれば勝ち！)</button>
+            <div class="audio" , id="audio">
+              <audio id="sounds" src="assets/sound1.mp3" preload="auto">
+              </audio>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div id="tuginotaisen" class="tugidiv">
+        <button class="tugi">次のターンへ</button>
+      </div>
+    </div>
+
+    <section>
+      <div id="win">
+        <p id="score"></p>
+        <div class="syuuryou">
+          <img src="img/win.jpg" alt="">
+        </div>
+      </div>
+
+      <div id="lose">
+        <div>
+          <p id="score"></p>
+          <div class="syuuryou">
+
+            <img src="img/lose.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div id="gameover">
+        <div>
+          <p id="score"></p>
+          <div class="syuuryou">
+
+            <img src="img/gameover.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <br>
+      <a class="button_t" href="index.html">TOPへ戻る（リセット）</a>
+    </section>
+
+
+
+
+
+
+
+
+  </main>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,731 @@
+* {
+    box-sizing: border-box;
+}
+ 
+button, input[type="submit"] {
+    outline: none;
+}
+ 
+.clear {
+    clear: both;
+}
+ 
+hr {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    border: 1px solid rgba(128, 128, 128, 0.673);
+}
+ 
+body {
+    color: #2b546a;
+    background-color: #fafafa;
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+ 
+h1 {
+    font-size: 24px;
+    margin: 0;
+    justify-content: center;
+}
+ 
+.content {
+    position: relative;
+    margin: 10px auto;
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 5px;
+}
+ 
+input {
+    border: none;
+    border-bottom: 1px solid #d1d1d1;
+    font-size: 1.2em;
+    width: 100%;
+    padding: 8px;
+}
+ 
+.btn {
+    width: 100%;
+    background-color: rgba(32, 152, 243, 0.9);
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 2px rgba(0, 0, 0, .4);
+    cursor: pointer;
+}
+ 
+.btn:hover {
+    background-color: rgba(32, 152, 243, 1.0);
+}
+ 
+.btn:active {
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+}
+ 
+.next-btn {
+    float: right;
+    width: 48%;
+}
+ 
+.back-btn {
+    width: 48%;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgba(27, 177, 112, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 5px 2px rgba(0, 0, 0, .4);
+    padding: 15px;
+    cursor: pointer;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+}
+ 
+.back-btn:hover {
+    background-color: rgba(27, 177, 112, 1.0);
+}
+ 
+.back-btn:active {
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+}
+ 
+.control {
+    margin-bottom: 3em;
+}
+ 
+label {
+    display: block;
+    margin-bottom: .5em;
+}
+ 
+.required {
+    margin-left: .3em;
+    color: #f33;
+    font-size: .9em;
+    padding: 3px;
+    background-color: #fee;
+    font-weight: bold;
+}
+ 
+.error {
+    color: #d60e0e;
+    font-size: 60%;
+}
+ 
+.check-info {
+    color: #2b546a;
+    font-weight: bold;
+}
+ 
+@media (max-width: 600px) {
+    h1 {
+        font-size: 18px;
+    }
+ 
+    p {
+        font-size: .8em;
+    }
+ 
+    .login-btn {
+        padding: 4px 3px 4px 8px;;
+        top: 28px;
+        line-height: 21px;
+    }
+ 
+    .login-btn:active {
+        top: 30px;
+    }
+}
+
+
+
+
+/*全体共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body{
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 16px;
+}
+
+
+/*パディングをサイズ内側にする処理*/
+.padding {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+
+.page-title {
+  font-size: 24px;
+}
+
+.title_box{
+    height: 250px;
+    background:url(../img/mainbg.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.title_box_title{
+    height: 130px;
+    font-size: 48px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title_box_text{
+    font-size: 24px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+}
+
+.sub_parent{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 80px;
+  background-color: dimgray; 
+}
+
+.subimage {
+  height: 50px;
+}
+
+.nav{
+  display:flex;
+  width: 100%;
+  height: 70px;
+  font-size: 21px;
+  background-color: dimgray; 
+  align-items: center; 
+  text-align: center;
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+
+.nav a{
+  text-align: center;
+  color: white;
+  display: block;
+  margin-left: 17px;
+  margin-right: 17px;
+}
+
+.nav :hover{
+  background: rgb(218, 148, 44);
+}
+
+.about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.h3{
+  display:flex;
+  font-size: 24px;
+  color: #000000;
+  padding-top: 120px;
+  padding-bottom: 24px;
+  justify-content: center;
+}
+
+.about p{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_p2{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+
+.about_p3{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  padding-bottom: 40px;
+}
+
+.about_p4{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  padding-bottom: 80px;
+}
+
+.about_img{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  padding-bottom: 64px;
+}
+
+.about_img_child {
+  display: flex;
+  width: 25%;
+}
+
+.wrap {
+ display: flex;
+ align-items: center;
+ overflow: hidden;
+}
+
+.slideshow {
+  display: flex;
+  padding-bottom: 64px;
+  animation: loop-slide 20s infinite linear 1s both;
+}
+@keyframes loop-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-paused:hover .slideshow {
+  animation-play-state: paused;
+}
+
+.center {
+  text-align: center;
+}
+
+.under_10px{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.under_64px{
+  text-align: center;
+  padding-bottom: 64px;
+}
+
+.corse1{
+  display: flex;
+}
+
+.corse_image_box{
+  width: 50%;
+}
+
+.corse_image_box img{
+    width: 100%;
+    height: 100%;
+}
+
+.corse1_child_right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 42px;
+  width: 50%;
+}
+
+.corse1_child_right_text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-right: 60px;
+  font-size: 16px;
+}
+
+.corse2{
+  display: flex;
+}
+
+.corse2_child_left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 42px;
+  width: 50%;
+}
+
+.corse2_child_right_text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-right: 60px;
+  font-size: 16px;
+}
+
+.news_parent{
+  text-align:center;
+  padding-bottom: 48px;
+}
+
+.news_box{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.news_box img{
+    width: 300px;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 32px;
+}
+
+.news_box_text{
+    width: 100%;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 56px;  
+}
+
+.top_24px{
+  padding-top: 24px;
+}
+
+.under_24px{
+  padding-bottom: 24px;
+}
+
+.under_60px{
+  padding-bottom: 60px;
+}
+
+.top_64px{
+  padding-top: 64px;
+}
+
+.top_24px_under60px{
+  padding-top: 24px;
+  padding-bottom: 60px;
+}
+
+.fontsize{
+  font-size: 12px;
+}
+
+.btn {
+ padding: 13px 119px;
+ background:yellowgreen;
+ color: white;
+ border-bottom: solid 5px gray;
+ border-radius: 4px;
+}
+.btn:active {
+ -webkit-transform: translateY(5px);
+ transform: translateY(5px);
+ border-bottom: none;
+}
+
+.access{
+  background-color: #fafafa;
+  padding-bottom: 56px;
+  padding-top: 64px;
+  display: flex;
+  justify-content: center;
+  align-content: center; 
+  flex-direction: column;
+  width: 100%;
+}
+
+.map{
+  position: relative;
+  width: 100%;
+}
+
+.map_content{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} 
+
+.access_flex_parent{
+  padding-top: 64px;
+  align-content: center; 
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.access_flex{
+  display: flex;
+  padding-bottom: 12px;
+  width: 100%;
+}
+
+.access_flex p{
+  display: flex;
+  font-size: 13px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  width: 50%;
+}
+
+.contact{
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-content: center; 
+  flex-direction: column;
+    margin-left: auto;
+  margin-right: auto;
+}
+
+.contact div{
+  margin-left: 200px;
+  margin-right: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact_text p{
+  align-content: center; 
+}
+
+.contact_text1{
+  align-content: center; 
+  padding-top: 24px;
+}
+
+.contact_text2{
+  align-content: center; 
+  padding-bottom: 60px;
+}
+
+
+/* コンタクトフォーム全体 */
+.contact_ma{
+  padding-left: 200px;
+  padding-right: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+}
+
+/* コンタクトフォームの外枠 */
+.contact-form {
+  padding: 10px;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+/* ラベルとフォームの横並びの設定＆位置の調整 */
+.contact-form .item {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* チェックボックスの設定 */
+.contact-form .item.no-label {
+  padding: 5px 0px 5px 120px;
+}
+
+/* ラベルを左に揃える ＆位置の調整*/
+.contact-form .item .label {
+  float: left;
+  padding: 5px;
+  margin:0;
+}
+
+/* チェックボックスの位置調整 ※ラベルがある箇所とない箇所ではpadding-leftの数値が違う。
+縦のラインを綺麗に揃えるため */
+.contact-form .item .check-group{
+  padding: 5px 0px 5px 120px;
+}
+
+/* 入力フォームの設定 */
+.contact-form .item input[type=text],
+.contact-form .item input[type=email],
+.contact-form .item textarea {
+  display: block;
+  margin-left: 120px;
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #bfbfbf;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+/* 空欄に表示する文字 */
+.contact-form .item ::placeholder {
+  color: rgb(180, 161, 161);
+}
+
+/* 詳細フォーム枠の設定 */
+.contact-form .item textarea {
+  outline: none;
+  border: 1px solid #bfbfbf;
+  resize: vertical;
+}
+
+/* 送信ボタンの設定 */
+input[type=submit] {
+  border: none;
+  outline: none;
+  display: block;
+  line-height: 30px;
+  width: 160px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  background-color: #696;
+  border-bottom: 4px solid #464;
+  cursor:pointer;
+
+  box-sizing: content-box;
+  transition:0.3s ease all
+}
+/* 送信ボタンを押した時の設定 */
+input[type=submit]:hover{
+  border-bottom-width:1px;
+  transform:translateY(4px)
+}
+
+/*ページトップ設定*/
+.pagetop {
+  margin-right: 10px;
+  padding-bottom: 40px;
+}
+.pagetop a {
+    color: #FFF;        /*文字色*/
+    font-size: 20px;    /*文字サイズ*/
+    background: grey;   /*背景色*/
+    text-align: center;
+    display: block;
+    float: right;
+    border-radius: 30px; 
+       /* 角丸のサイズ */
+    width: 50px;
+    line-height: 50px;
+}
+
+.footer_div{
+  padding-top: 10px;
+}
+
+.footer {
+  font-size: 18px;
+  color: white;
+  width: 100%;
+  height: 120px; 
+  text-align: center;
+  padding: 50px 0;
+  background-color: #707070;
+}
+
+/* 送信ボタンの設定 */
+input[type=submit2] {
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  outline: none;
+  display: block;
+  line-height: 30px;
+  width: 180px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  background-color: #696;
+  border-bottom: 4px solid #464;
+  cursor:pointer;
+
+  box-sizing: content-box;
+  transition:0.3s ease all
+}
+/* 送信ボタンを押した時の設定 */
+input[type=submit2]:hover{
+  border-bottom-width:1px;
+  transform:translateY(4px)
+}
+
+/* 魔改造 */
+.makaizou{
+  padding-top: 30px;
+  padding-left: 35px;
+  justify-content: center;
+  background-color: #bfbfbf;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.randam_box img{
+  width: 70%;
+  justify-content: center;
+    flex-direction: column;
+      align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 270px;
+}
+/* .randam_box_child img{
+  width: 50%;
+  justify-content: center;
+    margin-left: auto;
+  margin-right: auto;
+} */
+
+.tizu_midashi{
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.top-h1{
+  font-size: 24px;
+  color: #000;
+  justify-content: center;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英単語勉強ノート</title>
+    <link rel="stylesheet" href="localstorage/css/style.css">
+    <script src="english.js" defer></script>
+
+</head>
+
+<body class="zentai">
+
+    <h1>プログラミング英単語_勉強ノート</h1>
+    <!-- <h1>英単語 勉強ノート</h1> -->
+
+    <h2>プログラマーに求められる英単語が10問ランダム出題されます</h2>
+    <div class="setumei">
+        <!-- <p>スタートで10問がランダム出題されます。</p> -->
+        <p>※全部で430単語収録</p>
+        <details>
+            <summary>このサイトについて</summary>
+            <p>プログラミングをする際には、ソースコードのコメントなどを英語で読むことが求められます。場合によっては英語で関数名を付けたり、ちょっとしたマニュアルを書いたりする機会もあります。ただしプログラミング時に求められる英単語は、一般的な英語で求められる英単語とは異なります。
+                この勉強ノートをプログラミング英語の学習や知識確認にご活用ください。</p>
+        </details>
+    </div>
+    <hr>
+
+    <span id="001"></span>
+
+    <input type="button" class="s_button" id="startbutton" value="スタート">
+    <div class="main">
+        <div>
+            <div id="start">
+                <h2>問題</h2>
+                <div id="text_q"></div>
+                <h2>選択</h2>
+                <div id="text_s"></div>
+                <h2>解答</h2>
+                <div id="text_a"></div>
+                <div id="text_a1"></div>
+            </div>
+        </div>
+
+        <!-- <hr> -->
+        <div>
+            <h2>↓あなたのステータス</h2>
+            <table>
+                <div class="status">
+
+                    <tr>
+                        <th>
+                            <p>これまでのトータル正解数</p>
+                        </th>
+                        <td>
+                            <h2 id="seikaisuu"></h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>正答率</p>
+                        </th>
+                        <td>
+                            <span id="002"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>称号</p>
+                        </th>
+                        <td>
+                            <p id="syougou"></p>
+                        </td>
+
+                    </tr>
+                </div>
+            </table>
+        </div>
+    </div>
+
+
+    <button id="clear">データクリア</button>
+
+    <br>
+    <br>
+    <details>
+        <summary>正解ログ(過去に正解した問題)</summary>
+        <div id="seikailog"></div>
+    </details>
+
+
+
+
+    <!-- <main>
+        <input type="text" id="input">
+        <textarea id="text_area"></textarea>
+        <ul>
+            <li id="save">Save</li>
+            <li id="clear">Clear</li>
+        </ul>
+    </main> -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+
+        $("#clear").on("click", function () {
+            localStorage.clear();
+            document.getElementById("seikaisuu").innerText = "";
+            document.getElementById("002").innerText = "";
+
+            document.getElementById("seikailog").innerHTML = "";
+            document.getElementById("001").innerHTML = "";
+
+
+
+        })
+
+    </script>
+
+
+
+</body>
+
+</html>
