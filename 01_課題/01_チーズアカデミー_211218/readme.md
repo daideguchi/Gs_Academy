@@ -17,4 +17,4 @@
 - 45種類ものチーズがランダムで表示されてとても楽しい
 
 ## URL
-https://daideguchi.github.io/cheese-academy/
+https://daideguchi.github.io/Gs_Academy/01_%E8%AA%B2%E9%A1%8C/01_%E3%83%81%E3%83%BC%E3%82%BA%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%83%BC_211218/
