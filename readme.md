@@ -17,3 +17,6 @@
 - [06_自分のスキル管理・ポートフォリオサイト(Github api/react)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/06_react-portfolio-site_220127)  
 
 - [07_インスタグラムで一言トレーニング(PHP/Facebook graph API/chart.js)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/07_php_work_220203)  
+
+## 卒業制作
+- [Chalk_up](https://github.com/daideguchi/Gs_Academy/tree/main/02_%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C/01_%E6%8F%90%E5%87%BA%E7%94%A8/01_%E6%9C%80%E7%B5%82)
