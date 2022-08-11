@@ -14,6 +14,6 @@
 
 - [05_ポジティブノート(Firebase)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/05_%E3%83%9D%E3%82%B8%E3%83%86%E3%82%A3%E3%83%96%E3%83%8E%E3%83%BC%E3%83%88_220120)  
 
-- [06_ポートフォリオサイト(api/react)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/06_react-portfolio-site_220127)  
+- [06_自分のスキル管理・ポートフォリオサイト(Github api/react)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/06_react-portfolio-site_220127)  
 
-- [07_インスタグラムで一言トレーニング(Facebook graph API/chart.js)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/07_php_work_220203)  
+- [07_インスタグラムで一言トレーニング(PHP/Facebook graph API/chart.js)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/07_php_work_220203)  

@@ -1,5 +1,9 @@
 # プロダクトのタイトル
  自分のスキル管理・ポートフォリオサイト（Github API）
+![image](https://user-images.githubusercontent.com/95999068/151380507-42350914-405f-4212-aafa-833d00ddc913.png)
+![image](https://user-images.githubusercontent.com/95999068/151380771-fc589167-1c22-4230-a818-40b36e0105b0.png)
+![image](https://user-images.githubusercontent.com/95999068/151380329-9fd8d1cf-135f-404d-a9ed-8074917c6915.png)
+![image](https://user-images.githubusercontent.com/95999068/151380403-a99eb164-f884-4b78-999d-c1e1e8fae4f5.png)
 
 ## プロダクトの紹介
  今回は、ネットの教材を参考に実装してみました。
