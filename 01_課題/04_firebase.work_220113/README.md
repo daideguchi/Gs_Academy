@@ -17,4 +17,4 @@ Asset Manager お金の管理ツール
 - 銘柄コードを入力すれば自動的に銘柄名が出力されるロジックを組んだ。（エクセルのvlookup的な）※日本株のみ
 
 ## URL
-https://daideguchi.github.io/firebase.work/
+https://daideguchi.github.io/Gs_Academy/01_%E8%AA%B2%E9%A1%8C/04_firebase.work_220113/

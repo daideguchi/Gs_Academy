@@ -19,4 +19,4 @@
 Vue.jsを使いこなしたかったが、難しく、結局断念した。
 
 ## URL
-https://daideguchi.github.io/firebase2/
+https://daideguchi.github.io/Gs_Academy/01_%E8%AA%B2%E9%A1%8C/05_%E3%83%9D%E3%82%B8%E3%83%86%E3%82%A3%E3%83%96%E3%83%8E%E3%83%BC%E3%83%88_220120/
