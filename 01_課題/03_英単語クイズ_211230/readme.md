@@ -20,4 +20,4 @@
 - 英単語を追加する場合も、比較的簡単に追加ができ、アップデートが非常に簡単なところはとても魅力的
 
 ## URL
-https://daideguchi.github.io/Gs_Academy/01_%E8%AA%B2%E9%A1%8C/03_%E3%83%A1%E3%83%A2%E5%B8%B3%E3%82%A2%E3%83%97%E3%83%AA_211230/
+https://daideguchi.github.io/Gs_Academy/01_%E8%AA%B2%E9%A1%8C/03_%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%AF%E3%82%A4%E3%82%BA_211230/
