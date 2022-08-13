@@ -6,9 +6,9 @@
 ## 課題
 - [01_チーズアカデミー(HTML/CSS)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/01_%E3%83%81%E3%83%BC%E3%82%BA%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%83%BC_211218)
 
-- [02_イカゲーム風おはじきゲーム(javascript)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/02_%E3%81%98%E3%82%83%E3%82%93%E3%81%91%E3%82%93%E3%82%A2%E3%83%97%E3%83%AA_211223)  
+- [02_イカゲーム風おはじきゲーム(javascript)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/02_%E3%82%A4%E3%82%AB%E3%82%B2%E3%83%BC%E3%83%A0%E9%A2%A8%E3%81%8A%E3%81%AF%E3%81%98%E3%81%8D%E3%82%B2%E3%83%BC%E3%83%A0_211223)  
 
-- [03_エンジニアのための英単語クイズ(localstrage)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/03_%E3%83%A1%E3%83%A2%E5%B8%B3%E3%82%A2%E3%83%97%E3%83%AA_211230)   
+- [03_エンジニアのための英単語クイズ(localstrage)](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/03_%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%82%AF%E3%82%A4%E3%82%BA_211230)   
 
 - [04_Asset_Managerお金の管理ツール(Firebase)_未完成](https://github.com/daideguchi/Gs_Academy/tree/main/01_%E8%AA%B2%E9%A1%8C/04_firebase.work_220113)  
 
