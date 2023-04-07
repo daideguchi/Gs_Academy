@@ -21,8 +21,6 @@
 ## 卒業制作
 - [Chalk_up(PHP/HTML/CSS/MYSQL/Swift)](https://github.com/daideguchi/Gs_Academy/tree/main/02_%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C/01_%E6%8F%90%E5%87%BA%E7%94%A8/01_%E6%9C%80%E7%B5%82)
   
-- [発表資料_卒制PDF](https://drive.google.com/file/d/1LYXemYh8J4jOuAZc4_U_Cbt2GMS1zQpd/view?usp=sharing)
-  
 - DB設計
 
 <img width="524" alt="DB1" src="https://user-images.githubusercontent.com/95999068/188459969-cdcb8b38-64af-427e-b662-592d78105033.png">
